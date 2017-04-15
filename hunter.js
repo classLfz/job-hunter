@@ -33,7 +33,7 @@ function hunting() {
 
   for (let webParser in parsers) {
     if (parsers.hasOwnProperty(webParser)) {
-      let promises = parsers[webParser].parser.buildRequests(parsers[webParser].maxPageNum);
+      let promises = parsers[webParser].buildRequests();
       pAll.push(promises);
     }
   }
@@ -50,7 +50,7 @@ function hunting() {
     for (let website in htmlObj) {
       if (htmlObj.hasOwnProperty(website)) {
         let dataStr = iGetInnerText(htmlObj[website]);
-        let parser = parsers[website].parser.parser;
+        let parser = parsers[website].parser;
         let jobArr = parser(dataStr, keyWords);
         jobArr = clearJobArr(jobArr);
         jobAllArr.push({
@@ -89,7 +89,7 @@ function hunting() {
       html: outStr // html body
     };
     logger.writeLog('Sending email.');
-    emailer.sendMail(mailOptions);
+    // emailer.sendMail(mailOptions);
   });
 }
 
@@ -111,7 +111,7 @@ function reporter() {
     text: logStr
   };
 
-  emailer.sendMail(mailOptions);
+  // emailer.sendMail(mailOptions);
 }
 
 /**

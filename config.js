@@ -20,20 +20,14 @@ module.exports = {
   },
   // parsers: an object include parser & max page number
   parsers: {
-    zl: {
-      parser: zlParser,
-      maxPageNum: 1
-    },
-    wy: {
-      parser: wyParser,
-      maxPageNum: 1
-    }
+    zl: zlParser,
+    wy: wyParser
   },
   // interval: the number of setInterval
   interval: 3600000,
   // keyWords: the key words you wanted
   keyWords: [
-    '前端'
+    ''
   ],
   email_service: 'gmail',
   email_user: 'xxxx@gmail.com',

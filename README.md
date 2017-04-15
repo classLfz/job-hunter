@@ -32,11 +32,11 @@ const zlParser = require('./parsers/zhilian-parser.js');
 
 - titles: 标题对象，用于存放对应的邮件信息标题，与下边的`parsers`字段信息对应
 
-- parsers: 页面信息解析器对象，存放两个字段：
+- parsers: 页面信息解析器实例存放对象
 
-  - parser: 分析器实例对象
+  - key:页面分析器简称，与上边的titles字段对应
 
-  - maxPageNum: 最大页面数量
+  - value: 对应的页面分析器实例
 
 - interval: 定时时间，单位为毫秒，默认值为`3600000`(即一个小时)
 
@@ -47,6 +47,8 @@ const zlParser = require('./parsers/zhilian-parser.js');
 - email_user: 发送邮件的邮件地址
 
 - email_pass: 发送邮件的邮件地址登录密码
+
+发送邮件方目前本人只测试过gmail，其他的邮件放送方还有待测试。
 
 ## 开启脚本
 

@@ -8,10 +8,10 @@ module.exports = {
 
 /**
  * Build the request promises
- * @param {number} maxPageNum max page number
  * @returns {promise} request base on axios
  */
-function buildRequests(maxPageNum) {
+function buildRequests() {
+  let maxPageNum = 1;
   let baseUrl = `http://sou.zhaopin.com/jobs/searchresult.ashx?jl=%E5%B9%BF%E5%B7%9E&p=`;
   let urlArr = buildUrlArr(baseUrl, maxPageNum);
 
