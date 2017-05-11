@@ -4,7 +4,7 @@ const wyParser = require('./parsers/wuyou-parser.js');
 
 module.exports = {
   // form: sender address
-  form: '"<name>" <xxxx@gmai.com>',
+  from: '"<name>" <xxxx@gmai.com>',
   // to: list of receivers
   to: 'xxxx@xx.com, yyyy@yy.com',
   // subject: the title of email
